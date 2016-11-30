@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
-class Map extends Component {
+class MyMap extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      color: props.initialColor
-    };
   }
 
   render() {
     return (
-      
+      <div>
+        <p>The Map would go here.</p>
+      </div>
     );
   }
 }
 
-export default Map;
+export default MyMap;
