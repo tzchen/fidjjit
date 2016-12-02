@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
-class MyMap extends Component {
+class Map extends Component {
 
   constructor(props) {
     super(props);
@@ -16,4 +16,4 @@ class MyMap extends Component {
   }
 }
 
-export default MyMap;
+export default Map;

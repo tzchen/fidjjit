@@ -1,23 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import MyMap from './Map.js';
+// import React, { Component } from 'react';
+// import logo from './logo.svg';
+import React from 'react';
+import './css/App.css';
+import { Link } from 'react-router';
+import '../node_modules/font-awesome/css/font-awesome.css'
 
-class App extends Component {
+var App = React.createClass({
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div className="navbar">
+          <Link className="link" activeClassName='active' to="/"><i className="fa fa-home"></i></Link>
+          <Link className="link" activeClassName='active' to="/explore">Explore</Link>
+
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <MyMap/>
+        <div className="children">
+          {this.props.children}
+        </div>
       </div>
     );
   }
-}
+});
 
 export default App;
