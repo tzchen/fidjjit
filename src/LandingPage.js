@@ -4,8 +4,7 @@ var LandingPage = React.createClass({
     render() {
         return(
             <div className="landing">
-            
-            	<p>HIHIHIHI</p>
+              <img src='/img/uw.png' alt="UW View" />
             </div>
         )
     }
