@@ -1,0 +1,10 @@
+{
+    "type": "Feature",
+    "properties": {
+      "text": "this is a Point!!!"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [122, 23.5]
+    }
+}
