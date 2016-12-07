@@ -1,3 +1,7 @@
-AJAX
+import React from 'react';
 
-52.8.18.242/tweets
+var url = "52.8.18.242/tweets";
+
+$.get(url).then(function(data) {
+	console.log(data);
+});
