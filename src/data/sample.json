@@ -1,10 +1,20 @@
-{
-    "type": "Feature",
-    "properties": {
-      "text": "this is a Point!!!"
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [122, 23.5]
-    }
+{ "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {"type": "Point", "coordinates": [122, 23.5]},
+            "properties": {"text": "value0", "population": 10000000}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "text": "this is a Point!!!",
+                "population": 10000000
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [122.3, 47.6]
+            }
+        }
+    ]
 }
