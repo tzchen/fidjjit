@@ -16,9 +16,7 @@ class TweetMap extends Component {
       <div>
         <MuiThemeProvider>
           <Card>
-            <CardMedia
-              overlay={<CardTitle title="" subtitle="" />}
-            >
+            <CardMedia overlay={<CardTitle title="" subtitle="" />}>
               <img id="headlinePicture" src="/img/TweetMapHeader.png" className="cover" />
             </CardMedia>
             <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(pronounced fi-jit)" />
