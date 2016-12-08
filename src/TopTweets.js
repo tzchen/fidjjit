@@ -1,4 +1,5 @@
 import React from 'react';
+import Tweet from './Project';
 
 
 // Twitter API (using Joel Ross's proxy)
@@ -8,21 +9,6 @@ var baseURL = "https://faculty.washington.edu/joelross/proxy/twitter/"
 var RTsort = "&result_type=popular"
 // limits results to top 5 tweets
 var top5 = "&count=5"
-
-
-//Renders the user and text of the Top 5 Tweets of the inputed keyword
-var TopTweetsResults = React.createClass({
-    render:function() {
-        return (
-            <div className="item" id="top5Keyword">
-              <div className="card">
-                <p>{this.props.user}</p>
-                <p>{this.props.text}</p>
-              </div>
-            </div>
-        )}
-        // make the results prettier - maybe get user profle image - or try to format it as a "tweet"
-});
 
 
 
