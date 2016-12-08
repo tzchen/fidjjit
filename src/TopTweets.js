@@ -28,7 +28,10 @@ var TopTweets = React.createClass({
 
       if (e.target.value.length > 0) {
       // URL of tweets containing the keyword in the text of the tweet, sorted by RT's, returns top 5
-      var keywordURL = (baseURL + "search/?q=" + e.target.value + top5 + sortByRT);
+      // var keywordURL = (baseURL + "search/?q=" + e.target.value + sortByRT);
+      var keywordURL = (baseURL + "search/?q=" + e.target.value + "&" + sortByRT + "&count=100");
+      console.log(keywordURL);
+
 
 
       //get tweets(containing the keyword)'s API object
@@ -96,6 +99,7 @@ render:function() {
               tweetID={this.state.keywordsTweets[0].id_str}
               tweetText={this.state.keywordsTweets[0].text}
               RTcount={this.state.keywordsTweets[0].retweet_count}
+              created_at={this.state.keywordsTweets[0].created_at}
               name={this.state.keywordsTweets[0].user.name}
               username={this.state.keywordsTweets[0].user.screen_name}
               profileImage={this.state.keywordsTweets[0].user.profile_image_url}
@@ -107,6 +111,7 @@ render:function() {
               tweetID={this.state.keywordsTweets[1].id_str}
               tweetText={this.state.keywordsTweets[1].text}
               RTcount={this.state.keywordsTweets[1].retweet_count}
+              created_at={this.state.keywordsTweets[1].created_at}
               name={this.state.keywordsTweets[1].user.name}
               username={this.state.keywordsTweets[1].user.screen_name}
               profileImage={this.state.keywordsTweets[1].user.profile_image_url}
@@ -117,6 +122,7 @@ render:function() {
               tweetID={this.state.keywordsTweets[2].id_str}
               tweetText={this.state.keywordsTweets[2].text}
               RTcount={this.state.keywordsTweets[2].retweet_count}
+             created_at={this.state.keywordsTweets[2].created_at}
               name={this.state.keywordsTweets[2].user.name}
               username={this.state.keywordsTweets[2].user.screen_name}
               profileImage={this.state.keywordsTweets[2].user.profile_image_url}
@@ -128,6 +134,7 @@ render:function() {
               tweetID={this.state.keywordsTweets[3].id_str}
               tweetText={this.state.keywordsTweets[3].text}
               RTcount={this.state.keywordsTweets[3].retweet_count}
+              created_at={this.state.keywordsTweets[3].created_at}
               name={this.state.keywordsTweets[3].user.name}
               username={this.state.keywordsTweets[3].user.screen_name}
               profileImage={this.state.keywordsTweets[3].user.profile_image_url}
@@ -139,6 +146,7 @@ render:function() {
                  tweetID={this.state.keywordsTweets[4].id_str}
                  tweetText={this.state.keywordsTweets[4].text}
                  RTcount={this.state.keywordsTweets[4].retweet_count}
+                 created_at={this.state.keywordsTweets[4].created_at}
                  name={this.state.keywordsTweets[4].user.name}
                  username={this.state.keywordsTweets[4].user.screen_name}
                  profileImage={this.state.keywordsTweets[4].user.profile_image_url}
@@ -162,6 +170,7 @@ export default TopTweets;
 //     tweetID={this.state.keywordsTweets[0].id_str}
 //     tweetText={this.state.keywordsTweets[0].text}
 //     RTcount={this.state.keywordsTweets[0].retweet_count}
+//     created_at={this.state.keywordsTweets[4].created_at}
 //     name={this.state.keywordsTweets[0].user.name}
 //     username={this.state.keywordsTweets[0].user.screen_name}
 //     profileImage={this.state.keywordsTweets[0].user.profile_image_url}
