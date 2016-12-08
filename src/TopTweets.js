@@ -26,7 +26,7 @@ var TopTweetsResults = React.createClass({
 
 
 
-var GetKeyword = React.createClass({
+var TopTweets = React.createClass({
   getInitialState:function() {
       return({searchKeyword: "", KeywordsTweets:[], KeywordID: ""});
 },
@@ -43,7 +43,7 @@ var GetKeyword = React.createClass({
   }.bind(this))
 },
 
-//Render the search box, and renders all of the inputed keyword's results
+//Render the search box, and renders all of the tweets of the inputed keyword's
 render:function() {
   return(
         <div>
@@ -70,4 +70,4 @@ render:function() {
 
 
 
-export default TopTweet;
+export default TopTweets;

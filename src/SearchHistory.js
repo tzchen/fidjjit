@@ -15,7 +15,7 @@ var SearchHistory = React.createClass({
 		$.get(url).then(function(data) {
 			console.log(data);
 		});
-		
+
 		return (
 			<div>
                 <input onChange={this.filter} placeholder="Search employees"/>
