@@ -26,3 +26,14 @@
   font-size: 2em;
   font-weight: 200;
 }
+
+.buttons {
+  display: table;
+  margin: 0 auto;
+}
+
+.button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}

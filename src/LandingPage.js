@@ -1,12 +1,14 @@
 import React from 'react';
 import './css/LandingPage.css'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import FontIcon from 'material-ui/FontIcon';
-import ActionAndroid from 'material-ui/svg-icons/action/android';
+import Search from 'material-ui/svg-icons/action/search';
+import Chat from 'material-ui/svg-icons/communication/forum';
+import History from 'material-ui/svg-icons/action/history';
 import {fullWhite} from 'material-ui/styles/colors';
+import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router';
 
 var LandingPage = React.createClass({
@@ -31,12 +33,11 @@ var LandingPage = React.createClass({
                   <hr/>
                   </p>
                 </CardText>
-                <CardActions>
-                  <Link className="link" activeClassName='active' to="/explore"><FlatButton label="Explore" icon={<ActionAndroid />} /></Link>
-                  <Link className="link" activeClassName='active' to="/topTweets"><FlatButton label="Top Tweets" /></Link>
-
-
-                  <FlatButton label="Action3" />
+                <CardActions className="buttons">
+                  <Link className="link" activeClassName='active' to="/explore"> <RaisedButton backgroundColor="#a4c639" className="button" label="Explore" icon={<Search />} /></Link>
+                  <Link className="link" activeClassName='active' to="/topTweets"><RaisedButton className="button" label="Top Tweets" icon={<Chat />} /></Link>
+                  <RaisedButton className="button" label="Search History" icon={<History />} />
+                  <br/><br/>
                 </CardActions>
               </Card>
               </MuiThemeProvider>
