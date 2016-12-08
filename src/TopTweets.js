@@ -1,5 +1,6 @@
 import React from 'react';
-import Tweet from './Project';
+import Tweet from './Tweet';
+import $ from 'jquery';
 
 
 // Twitter API (using Joel Ross's proxy)
@@ -47,11 +48,12 @@ render:function() {
                   user={m.user.screen_name}
                   profileImage ={m.user.profile_image_url}
                 />
-              }
-            })}
+              })}
           </div>
         </div>
   )}
+
+  });
 
 
 

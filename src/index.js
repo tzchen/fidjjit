@@ -6,6 +6,7 @@ import { IndexRoute, Router, Route, Link, hashHistory } from 'react-router';
 import './css/index.css';
 import LandingPage from './LandingPage';
 import TweetMap from './TweetMap';
+import TopTweets from './TopTweets';
 
  // Initialize Firebase
 var config = {

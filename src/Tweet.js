@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-//Renders one Tweet Result
+//Renders one Tweet Result (goes with TopTweets Page)
 var Tweet = React.createClass({
     render:function() {
         return (
