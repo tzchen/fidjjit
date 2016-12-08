@@ -13,6 +13,8 @@ var Tweet = React.createClass({
             <h2> user: </h2>
             <p>{this.props.name} </p>
 
+            <img src={this.props.profileImage} />
+
               <h2> tweet: </h2>
               <p>{this.props.tweetText}</p>
 

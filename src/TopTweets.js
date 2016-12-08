@@ -49,23 +49,21 @@ render:function() {
   if (typeof this.state.keywordsTweets[0] === "undefined") {
       console.log("array is undefined again");
       for (var i = 0; i < 5; i++) {
-          this.state.keywordsTweets[i] = {text: "empty", id_str: "empty", retweet_coun: "empty", user: {"name": "empty", "screen_name": "empty", "profile_image_url":"empty"}}
+          this.state.keywordsTweets[i] = {text: "", id_str: "", retweet_coun: "", user: {"name": "", "screen_name": "", "profile_image_url":""}}
     }
   }
   console.log(this.state.keywordsTweets)
   return(
         <div className="container" id="TopTweetsResults">
           <form>
-            <input onChange={this.getKeyword} type="text" id="search_keyword" placeholder="Type in an keyword...."/>
+            <input onChange={this.getKeyword} type="text" id="search_keyword" placeholder="Type in an keyword...." pattern=".{1,140}"/>
           </form>
 
 
           <h1>KEYWORD: {this.state.searchKeyword}</h1>
 
-
-
-          num 1
-          <Tweet
+              num 1
+              <Tweet
               key={'tweet-' + i}
               keyword={this.state.searchKeyword}
               tweetID={this.state.keywordsTweets[0].id_str}
@@ -74,94 +72,79 @@ render:function() {
               name={this.state.keywordsTweets[0].user.name}
               username={this.state.keywordsTweets[0].user.screen_name}
               profileImage={this.state.keywordsTweets[0].user.profile_image_url}
-               />
+              />
 
-          num 2
-            <Tweet
-                keyword={this.state.searchKeyword}
-                tweetID={this.state.keywordsTweets[1].id_str}
-                tweetText={this.state.keywordsTweets[1].text}
-                RTcount={this.state.keywordsTweets[1].retweet_count}
-                 />
-          num 3
-                 <Tweet
-                     keyword={this.state.searchKeyword}
-                     tweetID={this.state.keywordsTweets[2].id_str}
-                     tweetText={this.state.keywordsTweets[2].text}
-                     RTcount={this.state.keywordsTweets[2].retweet_count}
-                      />
+              num 2
+              <Tweet
+              keyword={this.state.searchKeyword}
+              tweetID={this.state.keywordsTweets[1].id_str}
+              tweetText={this.state.keywordsTweets[1].text}
+              RTcount={this.state.keywordsTweets[1].retweet_count}
+              name={this.state.keywordsTweets[1].user.name}
+              username={this.state.keywordsTweets[1].user.screen_name}
+              profileImage={this.state.keywordsTweets[1].user.profile_image_url}
+              />
+              num 3
+              <Tweet
+              keyword={this.state.searchKeyword}
+              tweetID={this.state.keywordsTweets[2].id_str}
+              tweetText={this.state.keywordsTweets[2].text}
+              RTcount={this.state.keywordsTweets[2].retweet_count}
+              name={this.state.keywordsTweets[2].user.name}
+              username={this.state.keywordsTweets[2].user.screen_name}
+              profileImage={this.state.keywordsTweets[2].user.profile_image_url}
+              />
 
+              num 4
+              <Tweet
+              keyword={this.state.searchKeyword}
+              tweetID={this.state.keywordsTweets[3].id_str}
+              tweetText={this.state.keywordsTweets[3].text}
+              RTcount={this.state.keywordsTweets[3].retweet_count}
+              name={this.state.keywordsTweets[3].user.name}
+              username={this.state.keywordsTweets[3].user.screen_name}
+              profileImage={this.state.keywordsTweets[3].user.profile_image_url}
+              />
 
-                      num 4
-                             <Tweet
-                                 keyword={this.state.searchKeyword}
-                                 tweetID={this.state.keywordsTweets[3].id_str}
-                                 tweetText={this.state.keywordsTweets[3].text}
-                                 RTcount={this.state.keywordsTweets[3].retweet_count}
-                                  />
+              num 5
+              <Tweet
+                 keyword={this.state.searchKeyword}
+                 tweetID={this.state.keywordsTweets[4].id_str}
+                 tweetText={this.state.keywordsTweets[4].text}
+                 RTcount={this.state.keywordsTweets[4].retweet_count}
+                 name={this.state.keywordsTweets[4].user.name}
+                 username={this.state.keywordsTweets[4].user.screen_name}
+                 profileImage={this.state.keywordsTweets[4].user.profile_image_url}
+                  />
 
-                                  num 5
-                                         <Tweet
-                                             keyword={this.state.searchKeyword}
-                                             tweetID={this.state.keywordsTweets[4].id_str}
-                                             tweetText={this.state.keywordsTweets[4].text}
-                                             RTcount={this.state.keywordsTweets[4].retweet_count}
-                                              />
-        </div>
-        )}
+              </div>
+              )}
 
-  });
-
-
-  // <Tweet
-  //     keyword={this.state.searchKeyword}
-  //     tweetID={index.id_str}
-  //     tweetText={index.text}
-  //     RTcount={index.retweet_count}
-  //      />
-
-
-//   <div>
-//     { this.state.keywordsTweets.map(function(m, i) {
-//       console.log(m)
-//         return <Tweet
-//           key={'tweet-' + i}
-//           keyword={this.state.searchKeyword}
-//           tweetID={m[i].id_str}
-//           tweetText={m[i].text}
-//           user={m[i].user.screen_name}
-//           RTcount={m[i].retweet_count}
-//           name={m[i].user.name}
-//           profileImage={m[i].user.profile_image_url}
-//           data={m}
-//         />
-//       })}
-//   </div>
-//   {this.props.children}
-//
-// </div>
+});
 
 
 
- // {this.state.keywordsTweets.map(function(m, i) {
-
-//   <div>
-//     { this.state.keywordsTweets.map(function(m, i) {
-//         return <Tweet
-//           key={'tweet-' + i}
-//           keyword={this.state.searchKeyword}
-//           tweetID={m.id_str}
-//           tweetText={m.text}
-//           user={m.user.screen_name}
-//           RTcount={m.retweet_count}
-//           name={m.user.name}
-//           profileImage={m.user.profile_image_url}
-//           data={m}
-//         />
-//       })}
-//   </div>
-//   {this.props.children}
-//
-// </div>
 
 export default TopTweets;
+
+// <div>
+//     { this.state.keywordsTweets.map(function(m, i) {
+//         return <Tweet
+//     key={'tweet-' + i}
+//     keyword={this.state.searchKeyword}
+//     tweetID={this.state.keywordsTweets[0].id_str}
+//     tweetText={this.state.keywordsTweets[0].text}
+//     RTcount={this.state.keywordsTweets[0].retweet_count}
+//     name={this.state.keywordsTweets[0].user.name}
+//     username={this.state.keywordsTweets[0].user.screen_name}
+//     profileImage={this.state.keywordsTweets[0].user.profile_image_url}
+//      />
+//
+//            })}
+//        </div>
+//        {this.props.children}
+//
+// </div>
+// )}
+//
+// });
