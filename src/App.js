@@ -13,6 +13,7 @@ var App = React.createClass({
         <div className="navbar">
           <Link className="link" activeClassName='active' to="/"><i className="fa fa-home"></i></Link>
           <Link className="link" activeClassName='active' to="/explore">Explore</Link>
+          <Link className="link" activeClassName='active' to="/topTweets">Top Tweets</Link>
 
         </div>
         <div className="children">
