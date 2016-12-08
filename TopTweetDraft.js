@@ -4,10 +4,6 @@ import $ from 'jquery';
 import 'whatwg-fetch';
 import './css/TopTweets.css'
 
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 
 // Twitter API (using Joel Ross's proxy)
 var baseURL = "https://faculty.washington.edu/joelross/proxy/twitter/"
@@ -19,6 +15,8 @@ var top5 = "&count=5"
 
 
 
+var tweetsArr = [];
+// var key = "";
 
 var TopTweets = React.createClass({
   getInitialState:function() {
@@ -26,111 +24,125 @@ var TopTweets = React.createClass({
 },
   getKeyword:function(e) {
 
-      if (e.target.value.length > 0) {
       // URL of tweets containing the keyword in the text of the tweet, sorted by RT's, returns top 5
       var keywordURL = (baseURL + "search/?q=" + e.target.value + top5 + sortByRT);
-
+      this.setState({searchKeyword: e.target.value})
+      // key = e.target.value;
+      // console.log(this.state.keywordsTweets);
 
       //get tweets(containing the keyword)'s API object
       $.get({url:keywordURL, dataType: 'json'}).then(function(data) {
-        // this.state.keywordsTweets = data.statuses;
-        this.setState({keywordsTweets: data.statuses})
-        // console.log(this.state.keywordsTweets);
-        // Promise.resolve(this.state.keywordsTweets)
-        // console.log(this.state.keywordsTweets)
+        tweetsArr = data.statuses;
+        Promise.resolve(tweetsArr)
+        // console.log(tweetsArr)
       }.bind(this))
-      this.setState({searchKeyword: e.target.value})
-    }
-
+      console.log(tweetsArr)
     },
 
+
+
+//   //get tweets(containing the keyword)'s API object
+//   $.get(keywordURL).then(function(data) {
+//       // add to array of tweets
+//       // console.log(data.statuses);
+
+//       // this.setState({keywordsTweets: data.statuses)})
+//       // console.log(this.state.keywordsTweets);
+//       // PROMISE VALUES IN ARRAY ARE UNDEFINED OR AN EMPTY!!!!!!! HELP :(
+
+//   }.bind(this))
+//   // console.log(this.state.keywordsTweets);
+// },
+
+//OR^
+// getKeyword:function(e) {
+//     this.setState({searchKeyword: e.target.value})
+//     // URL of tweets containing the keyword in the text of the tweet, sorted by RT's, returns top 5
+//     var keywordURL = (baseURL + "search/?q=" + e.target.value + top5 + RTsort);
+//   //   this.grabData(keywordURL);
+//   // },
+//
+//   // similar to AJAX call
+  // grabData:function(url) {
+  //   return fetch(url)
+  //   .then((result) => {
+  //     // results are a Promise
+  //     var res = result.json()
+  //     console.log(res)
+  //     console.log(res['[[PromiseValue]]'])
+  //     var arr = []
+  //     this.setState({keywordsTweets: ['[[PromiseValue]]'].statuses})
+ // // OBJECTS IN ARRAY ARE ALWAYS UNDEFINED!!!!!!! HELP
+  //     console.log(['[[PromiseValue]]'].statuses)
+  //     arr.map(function(i) {
+  //       arr.push(res[i].text);
+  //       console.log(arr)
+  //     return arr;
+  //   });
+  // });
 
 
 
 
 //Render the search box, and renders all of the tweets of the inputed keyword's
 render:function() {
-  if (typeof this.state.keywordsTweets[0] === "undefined") {
+  if (typeof tweetsArr[0] === "undefined") {
       console.log("array is undefined again");
       for (var i = 0; i < 5; i++) {
-          this.state.keywordsTweets[i] = {text: "empty", id_str: "empty", retweet_coun: "empty", user: {"name": "empty", "screen_name": "empty", "profile_image_url":"empty"}}
+          tweetsArr[i] = [{text: "empty", id_str: "empty", retweet_coun: "empty", user: {"name": "empty", "screen_name": "empty", "profile_image_url":"empty"}}]
     }
+
+
   }
-  console.log(this.state.keywordsTweets)
   return(
         <div className="container" id="TopTweetsResults">
-
-        <MuiThemeProvider>
-         <Card>
-           <CardMedia
-             overlay={<CardTitle title="" subtitle="" />}
-           >
-             <img id="headlinePicture" src="/img/TopTweetsHeader.png" className="cover" />
-           </CardMedia>
-           <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(pronounced fi-jit)" />
-           <CardText>
-             <p id="small-text">
-             Fidjjit is a tool to help people visualize and understand information created by the popular social networking
-             site Twitter. Our goal is to help users discover new perceptions through manipulating existing tweet data
-             and displaying it in a unique and meaningful way.
-             </p>
-           </CardText>
-           <CardActions className="buttons">
-           </CardActions>
-         </Card>
-         </MuiThemeProvider>
-
           <form>
             <input onChange={this.getKeyword} type="text" id="search_keyword" placeholder="Type in an keyword...."/>
           </form>
 
 
-          <h1>KEYWORD: {this.state.searchKeyword}</h1>
+          <p>{this.state.searchKeyword}</p>
 
 
 
           num 1
           <Tweet
-              key={'tweet-' + i}
               keyword={this.state.searchKeyword}
-              tweetID={this.state.keywordsTweets[0].id_str}
-              tweetText={this.state.keywordsTweets[0].text}
-              RTcount={this.state.keywordsTweets[0].retweet_count}
-              name={this.state.keywordsTweets[0].user.name}
-              username={this.state.keywordsTweets[0].user.screen_name}
-              profileImage={this.state.keywordsTweets[0].user.profile_image_url}
+              tweetID={tweetsArr[0].id_str}
+              tweetText={tweetsArr[0].text}
+              RTcount={tweetsArr[0].retweet_count}
                />
 
           num 2
             <Tweet
                 keyword={this.state.searchKeyword}
-                tweetID={this.state.keywordsTweets[1].id_str}
-                tweetText={this.state.keywordsTweets[1].text}
-                RTcount={this.state.keywordsTweets[1].retweet_count}
+                tweetID={tweetsArr[1].id_str}
+                tweetText={tweetsArr[1].text}
+                RTcount={tweetsArr[1].retweet_count}
                  />
           num 3
                  <Tweet
                      keyword={this.state.searchKeyword}
-                     tweetID={this.state.keywordsTweets[2].id_str}
-                     tweetText={this.state.keywordsTweets[2].text}
-                     RTcount={this.state.keywordsTweets[2].retweet_count}
+                     tweetID={tweetsArr[2].id_str}
+                     tweetText={tweetsArr[2].text}
+                     RTcount={tweetsArr[2].retweet_count}
                       />
 
 
                       num 4
                              <Tweet
                                  keyword={this.state.searchKeyword}
-                                 tweetID={this.state.keywordsTweets[3].id_str}
-                                 tweetText={this.state.keywordsTweets[3].text}
-                                 RTcount={this.state.keywordsTweets[3].retweet_count}
+                                 tweetID={tweetsArr[3].id_str}
+                                 tweetText={tweetsArr[3].text}
+                                 RTcount={tweetsArr[3].retweet_count}
                                   />
 
                                   num 5
                                          <Tweet
                                              keyword={this.state.searchKeyword}
-                                             tweetID={this.state.keywordsTweets[4].id_str}
-                                             tweetText={this.state.keywordsTweets[4].text}
-                                             RTcount={this.state.keywordsTweets[4].retweet_count}
+                                             tweetID={tweetsArr[4].id_str}
+                                             tweetText={tweetsArr[4].text}
+                                             RTcount={tweetsArr[4].retweet_count}
                                               />
         </div>
         )}
@@ -168,7 +180,7 @@ render:function() {
 
 
 
- // {this.state.keywordsTweets.map(function(m, i) {
+ // {tweetsArr.map(function(m, i) {
 
 //   <div>
 //     { this.state.keywordsTweets.map(function(m, i) {
