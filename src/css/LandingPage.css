@@ -12,6 +12,17 @@
   max-height: 600px;
 }
 
+#small-text {
+  font-size: 1.25em;
+  font-weight: 100;
+}
+
 .cover {
   object-fit: cover;
+}
+
+.center {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 200;
 }

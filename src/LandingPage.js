@@ -7,6 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import FontIcon from 'material-ui/FontIcon';
 import ActionAndroid from 'material-ui/svg-icons/action/android';
 import {fullWhite} from 'material-ui/styles/colors';
+import { Link } from 'react-router';
 
 var LandingPage = React.createClass({
     render() {
@@ -16,20 +17,25 @@ var LandingPage = React.createClass({
               <Card>
 
                 <CardMedia
-                  overlay={<CardTitle title="CATCHPHRASE" subtitle="Overlay subtitle" />}
+                  overlay={<CardTitle title="" subtitle="" />}
                 >
-                  <img id="headlinePicture" src="/img/uw.png" className="cover" />
+                  <img id="headlinePicture" src="/img/mainHeader.png" className="cover" />
                 </CardMedia>
-                <CardTitle title="Card title" subtitle="Card subtitle" />
+                <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(pronounced fi-jit)" />
                 <CardText>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                  Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                  Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                  <p id="small-text">
+                  Fidjjit is a tool to help people visualize and understand information created by the popular social networking
+                  site Twitter. Our goal is to help users discover new perceptions through manipulating existing tweet data
+                  and displaying it in a unique and meaningful way.
+                  <br/><br/>
+                  <hr/>
+                  </p>
                 </CardText>
                 <CardActions>
-                  <FlatButton label="Action1" icon={<ActionAndroid />} />
-                  <FlatButton label="Action2" />
+                  <Link className="link" activeClassName='active' to="/explore"><FlatButton label="Explore" icon={<ActionAndroid />} /></Link>
+                  <Link className="link" activeClassName='active' to="/topTweets"><FlatButton label="Top Tweets" /></Link>
+
+
                   <FlatButton label="Action3" />
                 </CardActions>
               </Card>
