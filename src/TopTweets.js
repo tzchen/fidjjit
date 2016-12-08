@@ -1,11 +1,16 @@
 import React from 'react';
 
+
+// Twitter API (using Joel Ross's proxy)
 var baseURL = "https://faculty.washington.edu/joelross/proxy/twitter/"
+
+// sorts results by most RTs
 var RTsort = "&result_type=popular"
+// limits results to top 5 tweets
 var top5 = "&count=5"
 
 
-//Renders the Artist's Album Items
+//Renders the user and text of the Top 5 Tweets of the inputed keyword
 var TopTweetsResults = React.createClass({
     render:function() {
         return (
@@ -16,6 +21,7 @@ var TopTweetsResults = React.createClass({
               </div>
             </div>
         )}
+        // make the results prettier - maybe get user profle image - or try to format it as a "tweet"
 });
 
 
@@ -26,6 +32,7 @@ var GetKeyword = React.createClass({
 },
   getKeyword:function(e) {
       this.setState({searchKeyword: e.target.value})
+      // URL of tweets containing the keyword in the text of the tweet, sorted by RT's, returns top 5
       var keywordURL = (baseURL + "search?q=" + e.target.value + top5 + RTsort);
 
 
