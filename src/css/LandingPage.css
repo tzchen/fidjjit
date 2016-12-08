@@ -1,0 +1,9 @@
+.landing {
+  height: 300px;
+  width: inherit;
+  padding: 0px;
+  top: 0px;
+  margin: 0px;
+  background-image: url(/img/uw.png);
+  background-size: cover;
+}
