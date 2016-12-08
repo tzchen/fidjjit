@@ -16,7 +16,8 @@
     "react-dom": "^15.4.1",
     "react-router": "^3.0.0",
     "react-tap-event-plugin": "^2.0.1",
-    "topojson": "^1.6.19"
+    "topojson": "^1.6.19",
+    "whatwg-fetch": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
