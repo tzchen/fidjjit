@@ -25,26 +25,17 @@ var TopTweets = React.createClass({
       return({searchKeyword: "", keywordsTweets:[], KeywordID: ""});
 },
   getKeyword:function(e) {
-
-      if (e.target.value.length > 0) {
-      // URL of tweets containing the keyword in the text of the tweet, sorted by RT's, returns top 5
-      // var keywordURL = (baseURL + "search/?q=" + e.target.value + sortByRT);
-      var keywordURL = (baseURL + "search/?q=" + e.target.value + "&" + sortByRT + "&count=100");
+      // URL of tweets containing the keyword in the text of the tweet, sorted by RT's
+      var keywordURL = (baseURL + "search/?q=" + e.target.value + "&" + sortByRT + "&" + top5);
       console.log(keywordURL);
-
-
 
       //get tweets(containing the keyword)'s API object
       $.get({url:keywordURL, dataType: 'json'}).then(function(data) {
         // this.state.keywordsTweets = data.statuses;
         this.setState({keywordsTweets: data.statuses})
-        // console.log(this.state.keywordsTweets);
-        // Promise.resolve(this.state.keywordsTweets)
-        // console.log(this.state.keywordsTweets)
       }.bind(this))
       this.setState({searchKeyword: e.target.value})
-    }
-
+    
     },
 
 
@@ -142,18 +133,18 @@ render:function() {
 
               num 5
               <Tweet
-                 keyword={this.state.searchKeyword}
-                 tweetID={this.state.keywordsTweets[4].id_str}
-                 tweetText={this.state.keywordsTweets[4].text}
-                 RTcount={this.state.keywordsTweets[4].retweet_count}
-                 created_at={this.state.keywordsTweets[4].created_at}
-                 name={this.state.keywordsTweets[4].user.name}
-                 username={this.state.keywordsTweets[4].user.screen_name}
-                 profileImage={this.state.keywordsTweets[4].user.profile_image_url}
-                  />
+               keyword={this.state.searchKeyword}
+               tweetID={this.state.keywordsTweets[4].id_str}
+               tweetText={this.state.keywordsTweets[4].text}
+               RTcount={this.state.keywordsTweets[4].retweet_count}
+               created_at={this.state.keywordsTweets[4].created_at}
+               name={this.state.keywordsTweets[4].user.name}
+               username={this.state.keywordsTweets[4].user.screen_name}
+               profileImage={this.state.keywordsTweets[4].user.profile_image_url}
+                />
 
-              </div>
-              )}
+        </div>
+    )}
 
 });
 
@@ -164,6 +155,7 @@ export default TopTweets;
 
 // <div>
 //     { this.state.keywordsTweets.map(function(m, i) {
+//          if (i < 5) {
 //         return <Tweet
 //     key={'tweet-' + i}
 //     keyword={this.state.searchKeyword}
@@ -176,7 +168,7 @@ export default TopTweets;
 //     profileImage={this.state.keywordsTweets[0].user.profile_image_url}
 //      />
 //
-//            })}
+//            }})}
 //        </div>
 //        {this.props.children}
 //
