@@ -1,9 +1,7 @@
 import React from 'react';
 import Tweet from './Tweet';
 import $ from 'jquery';
-import 'whatwg-fetch';
 import './css/TopTweets.css';
-
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -22,7 +20,7 @@ var top5 = "&count=5"
 
 var TopTweets = React.createClass({
   getInitialState:function() {
-      return({searchKeyword: "", keywordsTweets:[], KeywordID: ""});
+      return({searchKeyword: "", keywordsTweets:[]});
 },
   getKeyword:function(e) {
       // URL of tweets containing the keyword in the text of the tweet, sorted by RT's
@@ -35,7 +33,7 @@ var TopTweets = React.createClass({
         this.setState({keywordsTweets: data.statuses})
       }.bind(this))
       this.setState({searchKeyword: e.target.value})
-    
+
     },
 
 
@@ -81,7 +79,7 @@ render:function() {
           </form>
 
 
-          <h1>KEYWORD: {this.state.searchKeyword}</h1>
+          <h1>Top 5 Most Retweeted Tweets containing   {this.state.searchKeyword} </h1>
 
               num 1
               <Tweet
