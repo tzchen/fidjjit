@@ -1,9 +1,17 @@
 .landing {
-  height: 300px;
-  width: inherit;
+  width: 100%;
   padding: 0px;
   top: 0px;
   margin: 0px;
-  background-image: url(/img/uw.png);
-  background-size: cover;
+  max-width: 1400px;
+  display: table;
+  margin: 0 auto;
+}
+
+#headlinePicture {
+  max-height: 600px;
+}
+
+.cover {
+  object-fit: cover;
 }
