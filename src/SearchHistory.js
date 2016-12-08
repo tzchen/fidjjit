@@ -6,13 +6,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 var SearchHistory = React.createClass({
-	// getInitialState:function() {
-	//
-	// },
+	getInitialState:function() {
+		return({searchKeyword: "", keywordsTweets:[], KeywordID: ""});
+	},
 
 	filter:function(e) {
 		console.log(e.target.value);
-		this.setState({searchString:e.target.value});
+		this.setState({searchKeyword:e.target.value});
 	},
 	render:function() {
 		var url = "52.8.18.242/tweets";
@@ -43,7 +43,10 @@ var SearchHistory = React.createClass({
 					 </CardActions>
 				 </Card>
 				 </MuiThemeProvider>
-				 <input onChange={this.filter} placeholder="Search employees"/>
+
+				 <input onChange={this.filter} placeholder="Search history"/>
+
+
 
       </div>
 		)
@@ -51,6 +54,9 @@ var SearchHistory = React.createClass({
 
 });
 
-
-
 export default SearchHistory;
+
+// For each prior search, store:
+// 		- top 5 results
+// 		- date/time of the search
+// 		- the results from that particular date/time

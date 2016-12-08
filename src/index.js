@@ -24,8 +24,8 @@ ReactDOM.render(
         <Route path="/" component={App}>
             <IndexRoute component={LandingPage}/>
             <Route path="explore" component={TweetMap}/>
-						<Route path="topTweets" component={TopTweets}/>
-						<Route path="searchHistory" component={SearchHistory}/>
+			<Route path="topTweets" component={TopTweets}/>
+			<Route path="searchHistory" component={SearchHistory}/>
         </Route>
     </Router>,
   document.getElementById('root')
