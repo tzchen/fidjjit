@@ -3,6 +3,10 @@ import Tweet from './Tweet';
 import $ from 'jquery';
 import 'whatwg-fetch';
 
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
 
 // Twitter API (using Joel Ross's proxy)
 var baseURL = "https://faculty.washington.edu/joelross/proxy/twitter/"
@@ -70,6 +74,27 @@ var TopTweets = React.createClass({
 render:function() {
   return(
         <div className="container" id="TopTweetsResults">
+
+        <MuiThemeProvider>
+         <Card>
+           <CardMedia
+             overlay={<CardTitle title="" subtitle="" />}
+           >
+             <img id="headlinePicture" src="/img/TopTweetsHeader.png" className="cover" />
+           </CardMedia>
+           <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(pronounced fi-jit)" />
+           <CardText>
+             <p id="small-text">
+             Fidjjit is a tool to help people visualize and understand information created by the popular social networking
+             site Twitter. Our goal is to help users discover new perceptions through manipulating existing tweet data
+             and displaying it in a unique and meaningful way.
+             </p>
+           </CardText>
+           <CardActions className="buttons">
+           </CardActions>
+         </Card>
+         </MuiThemeProvider>
+
           <form>
             <input onChange={this.getKeyword} type="text" id="search_keyword" placeholder="Type in an keyword...."/>
           </form>

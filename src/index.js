@@ -7,6 +7,7 @@ import './css/index.css';
 import LandingPage from './LandingPage.js';
 import TweetMap from './TweetMap.js';
 import TopTweets from './TopTweets.js';
+import SearchHistory from './SearchHistory.js';
 
  // Initialize Firebase
 var config = {
@@ -24,6 +25,7 @@ ReactDOM.render(
             <IndexRoute component={LandingPage}/>
             <Route path="explore" component={TweetMap}/>
 						<Route path="topTweets" component={TopTweets}/>
+						<Route path="searchHistory" component={SearchHistory}/>
         </Route>
     </Router>,
   document.getElementById('root')

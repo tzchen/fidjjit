@@ -17,7 +17,7 @@ var App = React.createClass({
           <Link className="link" activeClassName='active' to="/"><MuiThemeProvider><FlatButton label="Home" /></MuiThemeProvider></Link>
           <Link className="link" activeClassName='active' to="/explore"><MuiThemeProvider><FlatButton label="Explore" /></MuiThemeProvider></Link>
           <Link className="link" activeClassName='active' to="/topTweets"><MuiThemeProvider><FlatButton label="Top Tweets" /></MuiThemeProvider></Link>
-
+          <Link className="link" activeClassName='active' to="/searchHistory"><MuiThemeProvider><FlatButton label="Search History" /></MuiThemeProvider></Link>
         </div>
         <div className="children">
           {this.props.children}
