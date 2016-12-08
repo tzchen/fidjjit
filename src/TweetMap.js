@@ -39,23 +39,27 @@ class TweetMap extends Component {
     var tooltipContent = function(d) {return d.properties;}
 
     return (
-      <MapBubble
-        width={width}
-        height={height}
-        dataPolygon={dataCounties}
-        polygonClass={polygonClass}
-        dataMesh={dataStates}
-        meshClass={meshClass}
-        domain={domain}
-        dataCircle={circles}
-        circleValue={circleValue}
-        circleClass={'bubble'}
-        projection={projection}
-        tooltipContent={tooltipContent}
-        showGraticule={false}
-        showTooltip={true}
-        showLegend={true}
-      />
+      <div>
+        <MapBubble
+          width={width}
+          height={height}
+          dataPolygon={dataCounties}
+          polygonClass={polygonClass}
+          dataMesh={dataStates}
+          meshClass={meshClass}
+          domain={domain}
+          dataCircle={circles}
+          circleValue={circleValue}
+          circleClass={'bubble'}
+          projection={projection}
+          tooltipContent={tooltipContent}
+          showGraticule={false}
+          showTooltip={true}
+          showLegend={true}
+        />
+        {this.props.children}
+      </div>
+
     );
   }
 }

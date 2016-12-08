@@ -34,13 +34,14 @@ var LandingPage = React.createClass({
                   </p>
                 </CardText>
                 <CardActions className="buttons">
-                  <Link className="link" activeClassName='active' to="/explore"> <RaisedButton backgroundColor="#a4c639" className="button" label="Explore" icon={<Search />} /></Link>
+                  <Link className="link" activeClassName='active' to="/explore"> <RaisedButton className="button" label="Explore" icon={<Search />} /></Link>
                   <Link className="link" activeClassName='active' to="/topTweets"><RaisedButton className="button" label="Top Tweets" icon={<Chat />} /></Link>
                   <RaisedButton className="button" label="Search History" icon={<History />} />
                   <br/><br/>
                 </CardActions>
               </Card>
               </MuiThemeProvider>
+              {this.props.children}
             </div>
         )
     }

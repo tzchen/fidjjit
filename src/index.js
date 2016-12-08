@@ -1,12 +1,12 @@
 import React from 'react';
 import firebase from 'firebase';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './App.js';
 import { IndexRoute, Router, Route, Link, hashHistory } from 'react-router';
 import './css/index.css';
-import LandingPage from './LandingPage';
-import TweetMap from './TweetMap';
-import TopTweets from './TopTweets';
+import LandingPage from './LandingPage.js';
+import TweetMap from './TweetMap.js';
+import TopTweets from './TopTweets.js';
 
  // Initialize Firebase
 var config = {

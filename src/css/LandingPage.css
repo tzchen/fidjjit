@@ -15,6 +15,7 @@
 #small-text {
   font-size: 1.25em;
   font-weight: 100;
+  color: #686868;
 }
 
 .cover {
@@ -24,7 +25,7 @@
 .center {
   text-align: center;
   font-size: 2em;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .buttons {

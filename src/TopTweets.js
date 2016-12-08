@@ -16,19 +16,24 @@ var top5 = "&count=5"
 
 var TopTweets = React.createClass({
   getInitialState:function() {
-      return({searchKeyword: "", KeywordsTweets:[], KeywordID: ""});
+      return({searchKeyword: "", keywordsTweets:[], KeywordID: ""});
 },
   getKeyword:function(e) {
-      this.setState({searchKeyword: e.target.value})
+
       // URL of tweets containing the keyword in the text of the tweet, sorted by RT's, returns top 5
       var keywordURL = (baseURL + "search/?q=" + e.target.value + top5 + RTsort);
+      this.setState({searchKeyword: e.target.value})
+      console.log(this.state.keywordsTweets);
 
   //get tweets(containing the keyword)'s API object
   $.get(keywordURL).then(function(data) {
       // add to array of tweets
-      this.setState({KeywordsTweets: data.statuses})
+      console.log(data.statuses);
+      this.setState({keywordsTweets: data.statuses})
+      console.log(this.state.keywordsTweets);
       // PROMISE VALUES IN ARRAY BECOME UNRESOLVED OR UNDEFINED RANDOMLY!!!!!!! HELP
   }.bind(this))
+  console.log(this.state.keywordsTweets);
 },
 
 //OR^
@@ -40,23 +45,23 @@ var TopTweets = React.createClass({
 //   // },
 //
 //   // similar to AJAX call
-//   // grabData:function(url) {
-//   //   return fetch(url)
-//   //   .then((result) => {
-//   //     // results are a Promise
-//   //     var res = result.json()
-//   //     console.log(res)
-//   //     console.log(res['[[PromiseValue]]'])
-//   //     var arr = []
-//   //     this.setState({KeywordsTweets: ['[[PromiseValue]]'].statuses})
-//  // // OBJECTS IN ARRAY ARE ALWAYS UNDEFINED!!!!!!! HELP
-//   //     console.log(['[[PromiseValue]]'].statuses)
-//   //     arr.map(function(i) {
-//   //       arr.push(res[i].text);
-//   //       console.log(arr)
-//   //     return arr;
-//   //   });
-//   // });
+  // grabData:function(url) {
+  //   return fetch(url)
+  //   .then((result) => {
+  //     // results are a Promise
+  //     var res = result.json()
+  //     console.log(res)
+  //     console.log(res['[[PromiseValue]]'])
+  //     var arr = []
+  //     this.setState({keywordsTweets: ['[[PromiseValue]]'].statuses})
+ // // OBJECTS IN ARRAY ARE ALWAYS UNDEFINED!!!!!!! HELP
+  //     console.log(['[[PromiseValue]]'].statuses)
+  //     arr.map(function(i) {
+  //       arr.push(res[i].text);
+  //       console.log(arr)
+  //     return arr;
+  //   });
+  // });
 
 
 
@@ -70,7 +75,7 @@ render:function() {
           </form>
 
           <div>
-            { this.state.KeywordsTweets.map(function(m, i) {
+            { this.state.keywordsTweets.map(function(m, i) {
                 return <Tweet
                   key={'tweet-' + i}
                   keyword={this.state.searchKeyword}
@@ -79,9 +84,11 @@ render:function() {
                   user={m.user.screen_name}
                   name={m.user.name}
                   profileImage={m.user.profile_image_url}
+                  data={m}
                 />
               })}
           </div>
+          {this.props.children}
 
         </div>
       )}
