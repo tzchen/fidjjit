@@ -9,7 +9,7 @@ require('./css/map.css');
 class TweetMap extends Component {
 
   render() {
-    
+
     const position = [39.50, -98.35];
 
     return (
@@ -19,7 +19,7 @@ class TweetMap extends Component {
             <CardMedia overlay={<CardTitle title="" subtitle="" />}>
               <img id="headlinePicture" src="/img/TweetMapHeader.png" className="cover" />
             </CardMedia>
-            <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(pronounced fi-jit)" />
+            <CardTitle className="center" title="Location Location Location!!!" subtitle="(34)" />
             <CardText>
               <p id="small-text">
               Fidjjit is a tool to help people visualize and understand information created by the popular social networking

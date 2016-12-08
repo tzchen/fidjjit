@@ -3,10 +3,12 @@
   padding: 0px;
   top: 0px;
   margin: 0px;
-  max-width: 1400px;
+  max-width: 1600px;
   display: table;
   margin: 0 auto;
 }
+
+
 
 #headlinePicture {
   max-height: 600px;

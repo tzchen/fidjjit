@@ -6,9 +6,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 var SearchHistory = React.createClass({
-	getInitialState:function() {
-
-	},
+	// getInitialState:function() {
+	//
+	// },
 
 	filter:function(e) {
 		console.log(e.target.value);
@@ -43,7 +43,7 @@ var SearchHistory = React.createClass({
 					 </CardActions>
 				 </Card>
 				 </MuiThemeProvider>
-
+				 <input onChange={this.filter} placeholder="Search employees"/>
 
       </div>
 		)
@@ -51,6 +51,6 @@ var SearchHistory = React.createClass({
 
 });
 
-//         <input onChange={this.filter} placeholder="Search employees"/>
+
 
 export default SearchHistory;

@@ -9,4 +9,14 @@ input {
     padding: 10px;
     font-size:20px;
     color: black;
+
+.container {
+  width: 100%;
+  padding: 0px;
+  top: 0px;
+  margin: 0px;
+  max-width: 1600px;
+  display: table;
+  margin: 0 auto;
+
 }
