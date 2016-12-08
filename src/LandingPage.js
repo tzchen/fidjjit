@@ -18,9 +18,7 @@ var LandingPage = React.createClass({
              <MuiThemeProvider>
               <Card>
 
-                <CardMedia
-                  overlay={<CardTitle title="" subtitle="" />}
-                >
+                <CardMedia overlay={<CardTitle title="" subtitle="" />}>
                   <img id="headlinePicture" src="/img/mainHeader.png" className="cover" />
                 </CardMedia>
                 <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(pronounced fi-jit)" />
@@ -30,8 +28,8 @@ var LandingPage = React.createClass({
                   site Twitter. Our goal is to help users discover new perceptions through manipulating existing tweet data
                   and displaying it in a unique and meaningful way.
                   <br/><br/>
-                  <hr/>
                   </p>
+                  <hr/>
                 </CardText>
                 <CardActions className="buttons">
                   <Link className="link" activeClassName='active' to="/explore"> <RaisedButton className="button" label="Explore" icon={<Search />} /></Link>
