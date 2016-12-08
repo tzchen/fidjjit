@@ -27,6 +27,7 @@ var TopTweets = React.createClass({
   $.get(keywordURL).then(function(data) {
       // add to array of tweets
       this.setState({KeywordsTweets: data.statuses})
+      // PROMISE VALUES IN ARRAY BECOME UNRESOLVED OR UNDEFINED RANDOMLY!!!!!!! HELP
   }.bind(this))
 },
 
@@ -48,6 +49,7 @@ var TopTweets = React.createClass({
 //   //     console.log(res['[[PromiseValue]]'])
 //   //     var arr = []
 //   //     this.setState({KeywordsTweets: ['[[PromiseValue]]'].statuses})
+//  // // OBJECTS IN ARRAY ARE ALWAYS UNDEFINED!!!!!!! HELP
 //   //     console.log(['[[PromiseValue]]'].statuses)
 //   //     arr.map(function(i) {
 //   //       arr.push(res[i].text);
@@ -55,10 +57,6 @@ var TopTweets = React.createClass({
 //   //     return arr;
 //   //   });
 //   // });
-
-
-
-
 
 
 
@@ -86,8 +84,7 @@ render:function() {
           </div>
 
         </div>
-  )}
-
+      )}
   });
 
 
