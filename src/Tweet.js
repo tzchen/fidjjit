@@ -14,3 +14,5 @@ var Tweet = React.createClass({
         )}
         // make the results prettier - maybe get user profle image - or try to format it as a "tweet"
 });
+
+export default Tweet;
