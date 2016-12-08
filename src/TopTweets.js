@@ -30,6 +30,39 @@ var TopTweets = React.createClass({
   }.bind(this))
 },
 
+//OR^
+// getKeyword:function(e) {
+//     this.setState({searchKeyword: e.target.value})
+//     // URL of tweets containing the keyword in the text of the tweet, sorted by RT's, returns top 5
+//     var keywordURL = (baseURL + "search/?q=" + e.target.value + top5 + RTsort);
+//   //   this.grabData(keywordURL);
+//   // },
+//
+//   // similar to AJAX call
+//   // grabData:function(url) {
+//   //   return fetch(url)
+//   //   .then((result) => {
+//   //     // results are a Promise
+//   //     var res = result.json()
+//   //     console.log(res)
+//   //     console.log(res['[[PromiseValue]]'])
+//   //     var arr = []
+//   //     this.setState({KeywordsTweets: ['[[PromiseValue]]'].statuses})
+//   //     console.log(['[[PromiseValue]]'].statuses)
+//   //     arr.map(function(i) {
+//   //       arr.push(res[i].text);
+//   //       console.log(arr)
+//   //     return arr;
+//   //   });
+//   // });
+
+
+
+
+
+
+
+
 //Render the search box, and renders all of the tweets of the inputed keyword's
 render:function() {
   return(
@@ -57,58 +90,6 @@ render:function() {
 
   });
 
-  // <div>
-  //   { this.state.KeywordsTweets.map(function(m, i) {
-  //       return <Tweet
-  //         key={'tweet-' + i}
-  //         keyword={this.state.searchKeyword}
-  //         tweetID={m.id_str}
-  //         tweetText={m.text}
-  //         user={m.user.screen_name}
-  //         profileImage ={m.user.profile_image_url}
-  //       />
-  //     })}
-  // </div>
 
 
 export default TopTweets;
-
-
-// getKeyword:function(e) {
-//     this.setState({searchKeyword: e.target.value})
-//     // URL of tweets containing the keyword in the text of the tweet, sorted by RT's, returns top 5
-//     var keywordURL = (baseURL + "search/?q=" + e.target.value + top5 + RTsort);
-//   //   this.grabData(keywordURL);
-//   // },
-//
-//   // similar to AJAX call
-//   // grabData:function(url) {
-//   //   return fetch(url)
-//   //   .then((result) => {
-//   //     // results are a Promise
-//   //     var res = result.json()
-//   //     console.log(res)
-//   //     console.log(res['[[PromiseValue]]'])
-//   //     var arr = []
-//   //     this.setState({KeywordsTweets: ['[[PromiseValue]]'].statuses})
-//   //     console.log(['[[PromiseValue]]'].statuses)
-//   //     arr.map(function(i) {
-//   //       arr.push(res[i].text);
-//   //       console.log(arr)
-//   //     return arr;
-//   //   });
-//   // });
-//
-// //   // Tiff fucking around
-// //   grabData:function(url) {
-// //     return fetch(url)
-// //     .then((result) => {
-// //       // results are a Promise
-// //       var res = result.json()
-// //       var temp = Promise.resolve(res['[[PromiseValue]]']);
-// //       console.log(temp)
-// //   }).then(function(t) {
-// //       console.log(t);
-// //   });
-// //
-// // },
