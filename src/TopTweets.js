@@ -79,6 +79,9 @@ render:function() {
           </form>
 
 
+
+
+
           <h1>Top 5 Most Retweeted Tweets containing   {this.state.searchKeyword} </h1>
 
               num 1
@@ -157,13 +160,13 @@ export default TopTweets;
 //         return <Tweet
 //     key={'tweet-' + i}
 //     keyword={this.state.searchKeyword}
-//     tweetID={this.state.keywordsTweets[0].id_str}
-//     tweetText={this.state.keywordsTweets[0].text}
-//     RTcount={this.state.keywordsTweets[0].retweet_count}
-//     created_at={this.state.keywordsTweets[4].created_at}
-//     name={this.state.keywordsTweets[0].user.name}
-//     username={this.state.keywordsTweets[0].user.screen_name}
-//     profileImage={this.state.keywordsTweets[0].user.profile_image_url}
+//     tweetID={m.id_str}
+//     tweetText={m.text}
+//     RTcount={m.retweet_count}
+//     created_at={m.created_at}
+//     name={m.user.name}
+//     username={m.user.screen_name}
+//     profileImage={m.user.profile_image_url}
 //      />
 //
 //            }})}
