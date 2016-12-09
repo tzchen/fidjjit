@@ -17,7 +17,7 @@ var Tweet = React.createClass({
 
             <img class="profilepic" src={this.props.profileImage} />
 
-              <blockquote class="twitter-tweet" data-lang="en">
+              <blockquote className="twitter-tweet" data-lang="en">
                 <p lang="en" dir="ltr">{this.props.tweetText}</p>&mdash; {this.props.name} (@{this.props.username}) <a href={this.props.link}>{this.props.created_at}</a>
               </blockquote>
 

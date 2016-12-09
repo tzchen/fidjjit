@@ -46,8 +46,6 @@ var SearchHistory = React.createClass({
 
 				 <input onChange={this.filter} placeholder="Search history"/>
 
-
-
     		</div>
 		)
 	}
