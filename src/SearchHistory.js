@@ -31,7 +31,7 @@ var SearchHistory = React.createClass({
 					 >
 						 <img id="headlinePicture" src="/img/SearchHistoryHeader.png" className="cover" />
 					 </CardMedia>
-					 <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(pronounced fi-jit)" />
+					 <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="Search History" />
 					 <CardText>
 						 <p id="small-text">
 						 Fidjjit is a tool to help people visualize and understand information created by the popular social networking
