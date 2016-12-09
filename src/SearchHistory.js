@@ -10,19 +10,21 @@ import firebase from 'firebase';
 
 var SearchHistory = React.createClass({
 	getInitialState:function() {
-		return({searchKeyword: "", keywordsTweets:[], KeywordID: ""});
+		return({searchKeyword: "", keywordsTweets:[], KeywordID: "", dayCount:0});
 	},
 
 	getWord:function(e) {
 		console.log(e.target.value);
 		this.setState({searchKeyword:e.target.value});
+		var count = this.dayHits(e.target.value.toLowerCase());
+		this.setState({dayCount:count});
 	},
 
-	dayHits:function() {
+	dayHits:function(term) {
 		var count = 0;
 		var terms = firebase.database().ref('terms');
 		var d = new Date();
-		var term = 'snow';
+		// var term = 'snow';
 		var month = d.getMonth() + 1;
 		console.log(term);
 		terms.once('value').then(function(snapshot) {
@@ -40,6 +42,7 @@ var SearchHistory = React.createClass({
 				}
 			}
 		});
+		return count;
 	},
 
 	monthHits:function() {
@@ -70,7 +73,7 @@ var SearchHistory = React.createClass({
 
 				 <input onChange={this.getWord} placeholder="Search history"/>
 
-				 <Day term='snow' />
+				 <Day count={this.state.dayCount} term='snow' />
     		</div>
 		)
 	}
