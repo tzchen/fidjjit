@@ -48,7 +48,7 @@ var SearchHistory = React.createClass({
 
 
 
-      </div>
+    		</div>
 		)
 	}
 
