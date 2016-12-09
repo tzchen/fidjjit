@@ -5,15 +5,18 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+import Day from './Day';
+
 var SearchHistory = React.createClass({
 	getInitialState:function() {
 		return({searchKeyword: "", keywordsTweets:[], KeywordID: ""});
 	},
 
-	filter:function(e) {
+	getWord:function(e) {
 		console.log(e.target.value);
 		this.setState({searchKeyword:e.target.value});
 	},
+
 	render:function() {
 		var url = "52.8.18.242/tweets";
 
@@ -42,9 +45,13 @@ var SearchHistory = React.createClass({
 				 </Card>
 				 </MuiThemeProvider>
 
-				 <input onChange={this.filter} placeholder="Search history"/>
 
   	</div>
+
+				 <input onChange={this.getWord} placeholder="Search history"/>
+
+				 <Day numSearched='3' term='nintendo' />
+    		</div>
 		)
 	}
 

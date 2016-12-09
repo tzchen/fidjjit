@@ -65,8 +65,8 @@ var TopTweets = React.createClass({
       // Get date
       let d = new Date();
       let month = d.getMonth() + 1;
-      let day = d.getDate();
-      let date = month + "-" + day;
+      let day = d.getDay();
+      let date = d.getDate();
 
       // Add keyword to firebase
       var terms = firebase.database().ref("terms");
@@ -86,9 +86,9 @@ var TopTweets = React.createClass({
 
     getKeyword:function(e) {
       // set state of searchKeyword and key
-      searchWord = e.target.value;
-      console.log(e.target.value);
-      input = e.target.value.replace("#", "%23")
+      searchWord = e.target.value.toLowerCase();
+      console.log(e.target.value.toLowerCase());
+      input = searchWord.replace("#", "%23")
     },
 
 
