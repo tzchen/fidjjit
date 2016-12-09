@@ -3,10 +3,12 @@
 
 .tweetItem {
   margin:5px;
-  border: 1px solid black;
+
+  width: 280px;
+  height: 550px;
 }
 
 .tweetItem img {
-  width: 100px;
-  height: 100px;
+  max-width: 200px;
+  max-height: 200px;
 }

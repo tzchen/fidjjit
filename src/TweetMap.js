@@ -32,12 +32,10 @@ class TweetMap extends Component {
             <CardMedia overlay={<CardTitle title="" subtitle="" />}>
               <img id="headlinePicture" src="/img/TweetMapHeader.png" className="cover" />
             </CardMedia>
-            <CardTitle className="center" title="Location Location Location!!!" subtitle="(Explore)" />
+            <CardTitle className="center" title="Explore the Twitter World" subtitle="(or just your hometown)" />
             <CardText>
               <p id="small-text">
-              Fidjjit is a tool to help people visualize and understand information created by the popular social networking
-              site Twitter. Our goal is to help users discover new perceptions through manipulating existing tweet data
-              and displaying it in a unique and meaningful way.
+              Finding where tweets come from is easy! Just type in a keyword or hashtag and hover over the markers that pop up to learn more about each Tweet.
               </p>
             </CardText>
             <CardActions className="buttons">

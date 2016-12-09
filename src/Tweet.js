@@ -1,7 +1,9 @@
 import React from 'react';
-import './css/Tweet.css'
+import './css/Tweet.css';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-  var t = "http://twitframe.com/show?url=";
+var t = "http://twitframe.com/show?url=";
 
  // TEST
 var Tweet = React.createClass({
@@ -9,25 +11,46 @@ var Tweet = React.createClass({
     render:function() {
         return (
           <div>
-            <div className="tweetItem">
+              <MuiThemeProvider>
+              <Card className="tweetItem">
+                <CardMedia
+                  overlay={<CardTitle className="RT" title={this.props.RTcount} subtitle="ReTweets" />}
+                >
+                <img className="profilepic" src={this.props.profileImage} />
+                </CardMedia>
 
-            <div className="RT">
-                {this.props.RTcount} RTs
-            </div>
+                <CardText>
+                  <p className="description">
+                  <blockquote className="twitter-tweet" data-lang="en">
+                    <p lang="en" dir="ltr">{this.props.tweetText}</p>&mdash; {this.props.name} (@{this.props.username}) <a href={this.props.link}>{this.props.created_at}</a>
+                  </blockquote>
 
-            <img class="profilepic" src={this.props.profileImage} />
-
-              <blockquote className="twitter-tweet" data-lang="en">
-                <p lang="en" dir="ltr">{this.props.tweetText}</p>&mdash; {this.props.name} (@{this.props.username}) <a href={this.props.link}>{this.props.created_at}</a>
-              </blockquote>
-
-            </div>
-        </div>
-        )}
+                  </p>
+                </CardText>
+              </Card>
+              </MuiThemeProvider>
+          </div>
+      )}
 });
 
 
 export default Tweet;
+
+// <div className="tweetItem">
+//
+// <div className="RT">
+//     {this.props.RTcount} RTs
+// </div>
+//
+// <img class="profilepic" src={this.props.profileImage} />
+//
+//   <blockquote className="twitter-tweet" data-lang="en">
+//     <p lang="en" dir="ltr">{this.props.tweetText}</p>&mdash; {this.props.name} (@{this.props.username}) <a href={this.props.link}>{this.props.created_at}</a>
+//   </blockquote>
+//
+// </div>
+// </div>
+// )}
 
 // <div className="tweetItem">
 //

@@ -5,7 +5,6 @@ import './css/App.css';
 import { Link } from 'react-router';
 import '../node_modules/font-awesome/css/font-awesome.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import FlatButton from 'material-ui/FlatButton';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();

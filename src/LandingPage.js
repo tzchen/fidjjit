@@ -2,7 +2,6 @@ import React from 'react';
 import './css/LandingPage.css'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import FontIcon from 'material-ui/FontIcon';
 import Search from 'material-ui/svg-icons/action/search';
 import Chat from 'material-ui/svg-icons/communication/forum';
@@ -86,7 +85,7 @@ var LandingPage = React.createClass({
                 <Testimonial
                   overlayTitle="Nika Lin"
                   image="/img/Person1.jpeg"
-                  description="&quot;This site has so many different interesting uses and everytime I come here I learn something new!&quot;"
+                  description="&quot;Fidjjit has so many different interesting uses and everytime I come here I learn something new!&quot;"
                 />
                 </MuiThemeProvider>
                 </Col>
@@ -95,7 +94,7 @@ var LandingPage = React.createClass({
                 <Testimonial
                   overlayTitle="Lee Sutton"
                   image="/img/Person2.jpg"
-                  description="&quot;This site has definitely caught my eye. It's awesome to see data visualized for easy comprehension.&quot;"
+                  description="&quot;This site has definitely caught my eye. It's awesome to see data filtered down for easy comprehension.&quot;"
                 />
                 </MuiThemeProvider>
                 </Col>

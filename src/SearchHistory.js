@@ -31,12 +31,10 @@ var SearchHistory = React.createClass({
 					 >
 						 <img id="headlinePicture" src="/img/SearchHistoryHeader.png" className="cover" />
 					 </CardMedia>
-					 <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(Search History)" />
+					 <CardTitle className="center" title="So Where Do I Start Snooping?" subtitle="(in a friendly way and non creepy way ofcourse)" />
 					 <CardText>
 						 <p id="small-text">
-						 Fidjjit is a tool to help people visualize and understand information created by the popular social networking
-						 site Twitter. Our goal is to help users discover new perceptions through manipulating existing tweet data
-						 and displaying it in a unique and meaningful way.
+						 If you want to peep into the search history of your fellow netizens, just search a term you are interested in to see how many other people were curious about that topic!
 						 </p>
 					 </CardText>
 					 <CardActions className="buttons">
@@ -45,7 +43,7 @@ var SearchHistory = React.createClass({
 				 </MuiThemeProvider>
 
 				 <input onChange={this.filter} placeholder="Search history"/>
-    		</div>
+
   	</div>
 		)
 	}
