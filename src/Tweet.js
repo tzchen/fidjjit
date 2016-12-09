@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/Tweet.css'
 
-
+  var t = "http://twitframe.com/show?url=";
 
 
  // TEST
@@ -21,6 +21,8 @@ var Tweet = React.createClass({
 
                 <h2> RTs: </h2>
                 <p>{this.props.RTcount} </p>
+
+
 
             </div>
         )}
