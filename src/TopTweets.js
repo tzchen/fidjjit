@@ -67,6 +67,7 @@ render:function() {
            </MuiThemeProvider>
          </div>
 
+
           <form>
             <input onChange={this.getKeyword} type="text" id="search_keyword" placeholder="Type in an keyword...."/>
           </form>
