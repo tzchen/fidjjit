@@ -45,9 +45,6 @@ var SearchHistory = React.createClass({
 				 </Card>
 				 </MuiThemeProvider>
 
-
-  	</div>
-
 				 <input onChange={this.getWord} placeholder="Search history"/>
 
 				 <Day numSearched='3' term='nintendo' />

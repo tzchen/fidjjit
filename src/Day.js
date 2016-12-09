@@ -7,9 +7,9 @@ var Day = React.createClass({
 		terms.once('value').then(function(snapshot) {
 			console.log(snapshot.val());
 			snapshot.val();
-			function myFunction({
-				console.log(item);
-			});
+			// function myFunction({
+				// console.log(item);
+			// });
 		});
 
 
