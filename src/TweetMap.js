@@ -32,7 +32,7 @@ class TweetMap extends Component {
             <CardMedia overlay={<CardTitle title="" subtitle="" />}>
               <img id="headlinePicture" src="/img/TweetMapHeader.png" className="cover" />
             </CardMedia>
-            <CardTitle className="center" title="Location Location Location!!!" subtitle="(34)" />
+            <CardTitle className="center" title="Location Location Location!!!" subtitle="(Explore)" />
             <CardText>
               <p id="small-text">
               Fidjjit is a tool to help people visualize and understand information created by the popular social networking
@@ -52,7 +52,7 @@ class TweetMap extends Component {
           />
           {
 
-          }          
+          }
           <CircleMarker center={position}>
             <Popup>
               <span>A pretty CSS3 popup.<br/>Easily customizable.</span>

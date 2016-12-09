@@ -53,12 +53,10 @@ render:function() {
              >
                <img id="headlinePicture" src="/img/TopTweetsHeader.png" className="cover" />
              </CardMedia>
-             <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(pronounced fi-jit)" />
+             <CardTitle className="center" title="<INSERT A BETTER CATCH PHRASE>" subtitle="(Top Tweets)" />
              <CardText>
                <p id="small-text">
-               Fidjjit is a tool to help people visualize and understand information created by the popular social networking
-               site Twitter. Our goal is to help users discover new perceptions through manipulating existing tweet data
-               and displaying it in a unique and meaningful way.
+               Get the scope on all the latest and hottest tweets. Just input a keyword or hashtag and we will show you the top 10 most retweeted tweets this week regarding that topic.
                </p>
              </CardText>
              <CardActions className="buttons">
@@ -69,7 +67,7 @@ render:function() {
 
 
           <form>
-            <input onChange={this.getKeyword} type="text" id="search_keyword" placeholder="Type in an keyword...."/>
+            <input onChange={this.getKeyword} type="text" id="search_keyword" placeholder="Search a topic.."/>
           </form>
 
 
