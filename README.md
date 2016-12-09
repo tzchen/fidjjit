@@ -2,7 +2,8 @@ https://students.washington.edu/tzchen/INFO343/fidjjit
 
 This project allows users to view and interpret Twitter data in unique ways not available from the site itself. Topics of interest are identified through key words supplied by the users, and relevant information surrounding those topics is displayed. We hope to give each of our users a more holistic view by providing opinions from locations that may otherwise be overlooked.
 
-***An important note on this project***
+***An important note on this project:***
+
 For chrome users, unsafe scripts must be allowed to load, as the page contains mixed content between the UW https server and the http server set up by Justin Inouye.
 
 
