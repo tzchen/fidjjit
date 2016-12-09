@@ -24,10 +24,10 @@
   to { transform: rotate(360deg); }
 }
 
-
 .children {
     margin-top: 70px;
 }
+
 .navbar {
     top:0px;
     bottom:0px;
