@@ -80,6 +80,7 @@ render:function() {
 
           <div>
               { this.state.keywordsTweets.map(function(m, i) {
+              var url = "https://twitter.com/" +  m.user.name + "/status/" + m.id_str;
               if (i < 10) {
                   return <Tweet
                       key={'tweet-' + i}
@@ -90,6 +91,7 @@ render:function() {
                       name={m.user.name}
                       username={m.user.screen_name}
                       profileImage={m.user.profile_image_url}
+                      link={url}
                    />
 
              }})}
