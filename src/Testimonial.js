@@ -19,7 +19,6 @@ var Testimonial = React.createClass({
         <p className="description">
         {this.props.description}
         </p>
-        <br/><br/>
         {this.props.button}
       </CardText>
     </Card>

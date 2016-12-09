@@ -74,29 +74,28 @@ var LandingPage = React.createClass({
                 </CardActions>
               </Card>
               </MuiThemeProvider>
-
-
               {this.props.children}
             </div>
             <br/>
-            <div className="container">
+            <div className="container people">
+            <h3 id="testimonialTitle">Testimonials</h3>
             <Container>
             <Row>
                 <Col sm={6} >
                 <MuiThemeProvider>
                 <Testimonial
-                  overlayTitle=""
+                  overlayTitle="Nika Lin"
                   image="/img/Person1.jpeg"
-                  description=""
+                  description="&quot;This site has so many different interesting uses and everytime I come here I learn something new!&quot;"
                 />
                 </MuiThemeProvider>
                 </Col>
                 <Col sm={6} >
                 <MuiThemeProvider>
                 <Testimonial
-                  overlayTitle="Explore"
+                  overlayTitle="Lee Sutton"
                   image="/img/Person2.jpg"
-                  description="Have you ever wondered where your fellow tweeters are tweeting from? Ever feel like you're living in a bubble? Come find out with our explore page!"
+                  description="&quot;This site has definitely caught my eye. It's awesome to see data visualized for easy comprehension.&quot;"
                 />
                 </MuiThemeProvider>
                 </Col>
@@ -104,6 +103,8 @@ var LandingPage = React.createClass({
             </Container>
             </div>
           </div>
+
+
         )
     }
 });

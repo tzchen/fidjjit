@@ -26,7 +26,7 @@ class TweetMap extends Component {
     const position = [39.50, -98.35];
 
     return (
-      <div>
+      <div className="container">
         <MuiThemeProvider>
           <Card>
             <CardMedia overlay={<CardTitle title="" subtitle="" />}>

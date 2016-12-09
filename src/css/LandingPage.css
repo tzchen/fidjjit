@@ -20,8 +20,20 @@
 
 }
 
+#testimonialTitle {
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  margin-bottom: -30px;
+  padding-bottom: 0px;
+}
+
 .cover {
   object-fit: cover;
+}
+
+.people {
+  margin-bottom: 150px;
 }
 
 .center {

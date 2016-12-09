@@ -22,7 +22,7 @@ var SearchHistory = React.createClass({
 		});
 
 		return (
-			<div>
+			<div className="container">
 
 				<MuiThemeProvider>
 				 <Card>
@@ -45,8 +45,8 @@ var SearchHistory = React.createClass({
 				 </MuiThemeProvider>
 
 				 <input onChange={this.filter} placeholder="Search history"/>
-
     		</div>
+  	</div>
 		)
 	}
 

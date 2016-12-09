@@ -111,7 +111,6 @@ render:function() {
                           <p id="small-text">
                           Get the scoop on all the latest and hottest tweets. Just input a keyword or hashtag that interests you and we will show you the top 10 most retweeted tweets this week regarding that topic.
                           </p>
-                          </p>
                       </CardText>
                       <CardActions className="buttons">
                       </CardActions>
@@ -141,7 +140,6 @@ render:function() {
                       profileImage={m.user.profile_image_url}
 
                       link={url}
-                   />
 
 
                    /></Col>
