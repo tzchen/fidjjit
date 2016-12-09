@@ -6,6 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Day from './Day';
+import firebase from 'firebase';
 
 var SearchHistory = React.createClass({
 	getInitialState:function() {
@@ -17,13 +18,35 @@ var SearchHistory = React.createClass({
 		this.setState({searchKeyword:e.target.value});
 	},
 
-	render:function() {
-		var url = "52.8.18.242/tweets";
-
-		$.get(url).then(function(data) {
+	dayHits:function() {
+		var count = 0;
+		var terms = firebase.database().ref('terms');
+		var d = new Date();
+		var term = 'snow';
+		var month = d.getMonth() + 1;
+		console.log(term);
+		terms.once('value').then(function(snapshot) {
+			var data = snapshot.val();
 			console.log(data);
+			for (var key in data) {
+				console.log(data[key].term + " term " + term);
+				console.log(data[key].month + " month " + month);
+				console.log(data[key].date + " date " + d.getDate());
+				if (data[key].term === term && 
+				data[key].month === month &&
+				data[key].date === d.getDate()) {
+					count++;
+					console.log(count);
+				}
+			}
 		});
+	},
 
+	monthHits:function() {
+
+	},
+
+	render:function() {
 		return (
 			<div className="container">
 
@@ -47,7 +70,7 @@ var SearchHistory = React.createClass({
 
 				 <input onChange={this.getWord} placeholder="Search history"/>
 
-				 <Day numSearched='3' term='nintendo' />
+				 <Day term='snow' />
     		</div>
 		)
 	}
