@@ -13,31 +13,31 @@ var baseURL = "https://faculty.washington.edu/joelross/proxy/twitter/"
 // sorts results by most RTs
 var sortByRT = "&result_type=popular"
 // limits results to top 5 tweets
-var top5 = "&count=5"
+var top10 = "&count=10"
 
 
 
 
 var TopTweets = React.createClass({
   getInitialState:function() {
-      return({searchKeyword: "...", keywordsTweets:[]});
+      return({searchKeyword: "...", key: "", keywordsTweets:[]});
 },
-  getKeyword:function(e) {
-      this.setState({searchKeyword: e.target.value})
-      // URL of tweets containing the keyword in the text of the tweet, sorted by RT's
-      var keywordURL = (baseURL + "search/?q=" + e.target.value + "&" + sortByRT + "&" + top5);
-      console.log(keywordURL);
 
+  getKeyword:function(e) {
+      // set state of searchKeyword and key
+      this.setState({searchKeyword:e.target.value})
+      var input = e.target.value;
+      input = input.replace("#", "%23")
+      this.setState({key: input})
+
+      // URL of tweets containing the keyword in the text of the tweet, sorted by RT's
+      var keywordURL = (baseURL + "search/?q=" + input + "&" + sortByRT + "&" + top10);
+      console.log(keywordURL);
       //get tweets(containing the keyword)'s API object
       $.get({url:keywordURL, dataType: 'json'}).then(function(data) {
-        // this.state.keywordsTweets = data.statuses;
         this.setState({keywordsTweets: data.statuses})
       }.bind(this))
-
     },
-
-
-
 
 
 //Render the search box, and renders all of the tweets of the inputed keyword's
@@ -45,8 +45,6 @@ render:function() {
 
   return(
         <div className="container" id="TopTweetsResults">
-
-        // Page Banner
         <div>
           <MuiThemeProvider>
            <Card>
@@ -71,18 +69,17 @@ render:function() {
 
           <form>
             <input onChange={this.getKeyword} type="text" id="search_keyword" placeholder="Type in an keyword...."/>
-            
           </form>
 
 
 
 
 
-          <h1>Top 5 Most Retweeted Tweets containing {this.state.searchKeyword} </h1>
+          <h1>Top 10 Most Retweeted Tweets containing {this.state.searchKeyword} </h1>
 
           <div>
               { this.state.keywordsTweets.map(function(m, i) {
-              if (i < 5) {
+              if (i < 10) {
                   return <Tweet
                       key={'tweet-' + i}
                       tweetID={m.id_str}
