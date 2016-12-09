@@ -4,29 +4,30 @@ import $ from 'jquery';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
+import RaisedButton from 'material-ui/RaisedButton';
+import Search from 'material-ui/svg-icons/action/search';
+import './css/SearchHistory.css';
 import Day from './Day';
+import Month from './Month';
 import firebase from 'firebase';
 
 var SearchHistory = React.createClass({
 	getInitialState:function() {
-		return({searchKeyword: "", keywordsTweets:[], KeywordID: "", dayCount:0});
+		return({searchKeyword: "", keywordsTweets:[], KeywordID: "", dayCount:0, monthCount:0});
 	},
 
 	getWord:function(e) {
 		console.log(e.target.value);
 		this.setState({searchKeyword:e.target.value});
-		var count = this.dayHits(e.target.value.toLowerCase());
-		this.setState({dayCount:count});
-	},
-
-	dayHits:function(term) {
-		var count = 0;
+		
+		// Get count for days
+		var dcount = 0;
+		var mcount = 0;
 		var terms = firebase.database().ref('terms');
+		console.log("GOT REF");
 		var d = new Date();
-		// var term = 'snow';
+		var term = e.target.value.toLowerCase();
 		var month = d.getMonth() + 1;
-		console.log(term);
 		terms.once('value').then(function(snapshot) {
 			var data = snapshot.val();
 			console.log(data);
@@ -35,23 +36,24 @@ var SearchHistory = React.createClass({
 				console.log(data[key].month + " month " + month);
 				console.log(data[key].date + " date " + d.getDate());
 				if (data[key].term === term && 
-				data[key].month === month &&
-				data[key].date === d.getDate()) {
-					count++;
-					console.log(count);
+				data[key].month === month) {
+					mcount++;
+					this.setState({monthCount:mcount});
+					if (data[key].date === d.getDate()) {
+						dcount++;
+						this.setState({dayCount:dcount});
+					}
 				}
 			}
-		});
-		return count;
-	},
-
-	monthHits:function() {
-
+		}.bind(this));
+		console.log("GET WORD COUNT = " + dcount);
+		this.setState({dayCount:dcount});
+		this.setState({monthCount:mcount});
 	},
 
 	render:function() {
 		return (
-			<div className="container">
+			<div className="container" id="SearchHistoryResults">
 
 				<MuiThemeProvider>
 				 <Card>
@@ -71,9 +73,12 @@ var SearchHistory = React.createClass({
 				 </Card>
 				 </MuiThemeProvider>
 
-				 <input onChange={this.getWord} placeholder="Search history"/>
-
-				 <Day count={this.state.dayCount} term='snow' />
+				 <form>
+		         	<input onChange={this.getWord} type="text" id="search_keyword" placeholder="Type in a keyword...." />
+				 	<Day count={this.state.dayCount} term={this.state.searchKeyword} />
+				 	<Month count={this.state.monthCount} term={this.state.searchKeyword} />
+		         </form>
+		         
     		</div>
 		)
 	}
@@ -81,8 +86,3 @@ var SearchHistory = React.createClass({
 });
 
 export default SearchHistory;
-
-// For each prior search, store:
-// 		- top 5 results
-// 		- date/time of the search
-// 		- the results from that particular date/time
