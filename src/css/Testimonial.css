@@ -1,0 +1,12 @@
+.description {
+  font-size: 1.25em;
+  font-weight: 100;
+}
+
+.picture {
+  max-height: 300px;
+}
+
+.cover {
+  object-fit: cover;
+}

@@ -5,7 +5,7 @@ import './css/TopTweets.css';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
+import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
 
 // Twitter API (using Joel Ross's proxy)
 var baseURL = "https://faculty.washington.edu/joelross/proxy/twitter/"
@@ -44,43 +44,40 @@ var TopTweets = React.createClass({
 render:function() {
 
   return(
-        <div className="container" id="TopTweetsResults">
-        <div>
-          <MuiThemeProvider>
-           <Card>
-             <CardMedia
-               overlay={<CardTitle title="" subtitle="" />}
-             >
-               <img id="headlinePicture" src="/img/TopTweetsHeader.png" className="cover" />
-             </CardMedia>
-             <CardTitle className="center" title="<INSERT A BETTER CATCH PHRASE>" subtitle="(Top Tweets)" />
-             <CardText>
-               <p id="small-text">
-               Get the scoop on all the latest and hottest tweets. Just input a keyword or hashtag that interests you and we will show you the top 10 most retweeted tweets this week regarding that topic.
-               </p>
-             </CardText>
-             <CardActions className="buttons">
-             </CardActions>
-           </Card>
-           </MuiThemeProvider>
+      <div className="container" id="TopTweetsResults">
+
+          <div>
+              <MuiThemeProvider>
+                  <Card>
+                      <CardMedia
+                      overlay={<CardTitle title="" subtitle="" />}
+                      >
+                      <img id="headlinePicture" src="/img/TopTweetsHeader.png" className="cover" />
+                  </CardMedia>
+                  <CardTitle className="center" title="So What Exactly is Top Tweets" subtitle="(Of The Week)" />
+                      <CardText>
+                          <p id="small-text">
+                          Get the scoop on all the latest and hottest tweets. Just input a keyword or hashtag that interests you and we will show you the top 10 most retweeted tweets this week regarding that topic.
+                          </p>
+                          </p>
+                      </CardText>
+                      <CardActions className="buttons">
+                      </CardActions>
+                  </Card>
+              </MuiThemeProvider>
          </div>
-
-
           <form>
             <input onChange={this.getKeyword} type="text" id="search_keyword" placeholder="Search a topic.."/>
           </form>
-
-
-
-
-
           <h1>Top 10 Most Retweeted Tweets containing {this.state.searchKeyword} </h1>
 
           <div>
+          <Container>
+          <Row>
               { this.state.keywordsTweets.map(function(m, i) {
               var url = "https://twitter.com/" +  m.user.name + "/status/" + m.id_str;
               if (i < 10) {
-                  return <Tweet
+                  return <Col sm={8} md={6} lg={3}><Tweet
                       key={'tweet-' + i}
                       tweetID={m.id_str}
                       tweetText={m.text}
@@ -89,20 +86,21 @@ render:function() {
                       name={m.user.name}
                       username={m.user.screen_name}
                       profileImage={m.user.profile_image_url}
+
                       link={url}
                    />
 
+
+                   /></Col>
+
              }})}
-                 </div>
-                 {this.props.children}
-
-
+             </Row>
+           </Container>
+           </div>
+           {this.props.children}
         </div>
     )}
-
 });
-
-
 
 
 export default TopTweets;

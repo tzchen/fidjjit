@@ -10,14 +10,16 @@ import History from 'material-ui/svg-icons/action/history';
 import {fullWhite} from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router';
+import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
+import Testimonial from './Testimonial.js'
 
 var LandingPage = React.createClass({
     render() {
         return(
-            <div className="landing">
+          <div>
+            <div className="container">
              <MuiThemeProvider>
               <Card>
-
                 <CardMedia overlay={<CardTitle title="" subtitle="" />}>
                   <img id="headlinePicture" src="/img/mainHeader.png" className="cover" />
                 </CardMedia>
@@ -30,17 +32,78 @@ var LandingPage = React.createClass({
                   <br/><br/>
                   </p>
                   <hr/>
+                  <Container>
+                  <Row>
+                      <Col sm={4} >
+                      <MuiThemeProvider>
+                      <Testimonial
+                        overlayTitle="Explore"
+                        overlaySubtitle=""
+                        description="Have you ever wondered where your fellow tweeters are tweeting from? Ever feel like you're living in a bubble? Come find out with our explore page!"
+                        button={<Link className="link" activeClassName='active' to="/explore"> <RaisedButton className="button" label="Explore" icon={<Search />} /></Link>}
+                      />
+                      </MuiThemeProvider>
+                      </Col>
+                      <Col sm={4} >
+                      <MuiThemeProvider>
+                      <Testimonial
+                        overlayTitle="Top Tweets"
+                        overlaySubtitle=""
+                        cardTitle=""
+                        description="When was the last time you heard about Harambe? With Top Tweets, you can find out this week's hottest posts on any subject of your choice!"
+                        button={<Link className="link" activeClassName='active' to="/topTweets"><RaisedButton className="button" label="Top Tweets" icon={<Chat />} /></Link>}
+                      />
+                      </MuiThemeProvider>
+                      </Col>
+                      <Col sm={4} >
+                      <MuiThemeProvider>
+                      <Testimonial
+                        overlayTitle="Search History"
+                        overlaySubtitle=""
+                        cardTitle=""
+                        description="Do you like facebook stalking and seeing what other people are searching on the internet? Then come check out our Search History page!"
+                        button={<Link className="link" activeClassName='active' to="/searchHistory"><RaisedButton className="button" label="Search History" icon={<History />} /></Link>}
+                      />
+                      </MuiThemeProvider>
+                      </Col>
+                  </Row>
+                  </Container>
                 </CardText>
                 <CardActions className="buttons">
-                  <Link className="link" activeClassName='active' to="/explore"> <RaisedButton className="button" label="Explore" icon={<Search />} /></Link>
-                  <Link className="link" activeClassName='active' to="/topTweets"><RaisedButton className="button" label="Top Tweets" icon={<Chat />} /></Link>
-                  <RaisedButton className="button" label="Search History" icon={<History />} />
                   <br/><br/>
                 </CardActions>
               </Card>
               </MuiThemeProvider>
+
+
               {this.props.children}
             </div>
+            <br/>
+            <div className="container">
+            <Container>
+            <Row>
+                <Col sm={6} >
+                <MuiThemeProvider>
+                <Testimonial
+                  overlayTitle=""
+                  image="/img/Person1.jpeg"
+                  description=""
+                />
+                </MuiThemeProvider>
+                </Col>
+                <Col sm={6} >
+                <MuiThemeProvider>
+                <Testimonial
+                  overlayTitle="Explore"
+                  image="/img/Person2.jpg"
+                  description="Have you ever wondered where your fellow tweeters are tweeting from? Ever feel like you're living in a bubble? Come find out with our explore page!"
+                />
+                </MuiThemeProvider>
+                </Col>
+            </Row>
+            </Container>
+            </div>
+          </div>
         )
     }
 });

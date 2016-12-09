@@ -1,6 +1,7 @@
-/*.App {
-  text-align: right;
-}*/
+.App {
+  background-image: url(/img/background.png);
+  padding-bottom: 5%;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

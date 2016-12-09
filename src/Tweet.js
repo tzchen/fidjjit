@@ -3,12 +3,12 @@ import './css/Tweet.css'
 
   var t = "http://twitframe.com/show?url=";
 
-
  // TEST
 var Tweet = React.createClass({
 
     render:function() {
         return (
+          <div>
             <div className="tweetItem">
 
             <div className="RT">
@@ -21,11 +21,8 @@ var Tweet = React.createClass({
                 <p lang="en" dir="ltr">{this.props.tweetText}</p>&mdash; {this.props.name} (@{this.props.username}) <a href={this.props.link}>{this.props.created_at}</a>
               </blockquote>
 
-
-
-
-
             </div>
+        </div>
         )}
 });
 

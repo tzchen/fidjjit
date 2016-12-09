@@ -1,4 +1,4 @@
-.landing {
+.container {
   width: 100%;
   padding: 0px;
   top: 0px;
@@ -8,16 +8,16 @@
   margin: 0 auto;
 }
 
-
-
 #headlinePicture {
   max-height: 600px;
+  width: 100%;
 }
 
 #small-text {
   font-size: 1.25em;
   font-weight: 100;
   color: #686868;
+
 }
 
 .cover {
@@ -39,4 +39,12 @@
   margin-right: 10px;
   margin-bottom: 10px;
   padding: 10px;
+  text-align:center;
+  display: table;
+  position: absolute;
+
+}
+
+.testimonials {
+  margin-top: 100px;
 }
