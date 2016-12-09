@@ -56,7 +56,7 @@ render:function() {
              <CardTitle className="center" title="<INSERT A BETTER CATCH PHRASE>" subtitle="(Top Tweets)" />
              <CardText>
                <p id="small-text">
-               Get the scope on all the latest and hottest tweets. Just input a keyword or hashtag and we will show you the top 10 most retweeted tweets this week regarding that topic.
+               Get the scoop on all the latest and hottest tweets. Just input a keyword or hashtag and we will show you the top 10 most retweeted tweets this week regarding that topic.
                </p>
              </CardText>
              <CardActions className="buttons">

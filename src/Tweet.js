@@ -11,16 +11,17 @@ var Tweet = React.createClass({
         return (
             <div className="tweetItem">
 
+            <div className="RT">
+                {this.props.RTcount} RTs
+            </div>
 
-            <img src={this.props.profileImage} />
-
+            <img class="profilepic" src={this.props.profileImage} />
 
               <blockquote class="twitter-tweet" data-lang="en">
                 <p lang="en" dir="ltr">{this.props.tweetText}</p>&mdash; {this.props.name} (@{this.props.username}) <a href={this.props.link}>{this.props.created_at}</a>
               </blockquote>
 
-                <h2> RTs: </h2>
-                <p>{this.props.RTcount} </p>
+
 
 
 
