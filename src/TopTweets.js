@@ -85,7 +85,7 @@ render:function() {
                       <CardMedia
                       overlay={<CardTitle title="" subtitle="" />}
                       >
-                      <img id="headlinePicture" src="/img/TopTweetsHeader.png" className="cover" />
+                      <img id="headlinePicture" src="./img/TopTweetsHeader.png" className="cover" />
                   </CardMedia>
                   <CardTitle className="center" title="So What Exactly is Top Tweets?" subtitle="(if you're looking for bird calls, you've come to the wrong place)" />
                       <CardText>

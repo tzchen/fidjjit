@@ -68,7 +68,7 @@ class TweetMap extends Component {
         <MuiThemeProvider>
           <Card>
             <CardMedia overlay={<CardTitle title="" subtitle="" />}>
-              <img id="headlinePicture" src="/img/TweetMapHeader.png" className="cover" />
+              <img id="headlinePicture" src="./img/TweetMapHeader.png" className="cover" />
             </CardMedia>
             <CardTitle className="center" title="Explore the Twitter World" subtitle="(or just your hometown)" />
             <CardText>

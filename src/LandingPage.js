@@ -20,7 +20,7 @@ var LandingPage = React.createClass({
              <MuiThemeProvider>
               <Card>
                 <CardMedia overlay={<CardTitle title="" subtitle="" />}>
-                  <img id="headlinePicture" src="/img/mainHeader.png" className="cover" />
+                  <img id="headlinePicture" src="./img/mainHeader.png" className="cover" />
                 </CardMedia>
                 <CardTitle className="center" title="So What Exactly is Fidjjit?" subtitle="(pronounced fi-jit)" />
                 <CardText>
@@ -84,7 +84,7 @@ var LandingPage = React.createClass({
                 <MuiThemeProvider>
                 <Testimonial
                   overlayTitle="Nika Lin"
-                  image="/img/Person1.jpeg"
+                  image="./img/Person1.jpeg"
                   description="&quot;Fidjjit has so many different interesting uses and everytime I come here I learn something new!&quot;"
                 />
                 </MuiThemeProvider>
@@ -93,7 +93,7 @@ var LandingPage = React.createClass({
                 <MuiThemeProvider>
                 <Testimonial
                   overlayTitle="Lee Sutton"
-                  image="/img/Person2.jpg"
+                  image="./img/Person2.jpg"
                   description="&quot;This site has definitely caught my eye. It's awesome to see data filtered down for easy comprehension.&quot;"
                 />
                 </MuiThemeProvider>

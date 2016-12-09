@@ -60,7 +60,7 @@ var SearchHistory = React.createClass({
 					 <CardMedia
 						 overlay={<CardTitle title="" subtitle="" />}
 					 >
-						 <img id="headlinePicture" src="/img/SearchHistoryHeader.png" className="cover" />
+						 <img id="headlinePicture" src="./img/SearchHistoryHeader.png" className="cover" />
 					 </CardMedia>
 					 <CardTitle className="center" title="So Where Do I Start Snooping?" subtitle="(in a friendly way and non creepy way ofcourse)" />
 					 <CardText>
